@@ -17,6 +17,8 @@ import com.example.alanvictorg.seminario.models.User;
 import com.example.alanvictorg.seminario.models.UserParameter;
 import com.example.alanvictorg.seminario.services.UserService;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +45,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+        okHttpClientBuilder.addInterceptor(loggingInterceptor);
+
 
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPassword = (EditText) findViewById(R.id.edtSenha);
@@ -55,9 +62,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
 
 
-        Retrofit retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl(UserService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClientBuilder.build())
                 .build();
 
     }
@@ -70,13 +78,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         UserParameter user = new UserParameter(email, senha);
 
         UserService service = retrofit.create(UserService.class);
-        final Call<User> requestLogin = service.logar(user);
+
+        Call<User> requestLogin = service.logar(user);
         requestLogin.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful())
                 {
-                    Log.i("TAG", "Erro: " + response.code());
+                    Log.i("TAG", " sem sucesso " + response.code());
                 } else {
                     // Requisição retornou com sucesso
                     User user = response.body();

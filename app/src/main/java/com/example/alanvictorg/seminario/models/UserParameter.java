@@ -6,12 +6,13 @@ package com.example.alanvictorg.seminario.models;
 
 public class UserParameter {
     private String email;
-    private String senha;
+    private String password;
 
-    public UserParameter(String email, String senha)
+    public UserParameter(String email, String password)
     {
-        this.email = null;
-        this.senha = null;
+        this.email = email;
+
+        this.password = password;
     }
 
     public String getEmail() {
@@ -22,11 +23,13 @@ public class UserParameter {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+
 }
