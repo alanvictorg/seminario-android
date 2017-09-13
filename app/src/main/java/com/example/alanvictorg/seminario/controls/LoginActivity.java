@@ -89,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     // Requisição retornou com sucesso
                     User user = response.body();
+                    Log.d("USER", "usuario: "+user);
                     Intent intent = new Intent(_this, MainActivity.class);
                     intent.putExtra("nome", user.getNome());
                     intent.putExtra("email", user.getEmail());

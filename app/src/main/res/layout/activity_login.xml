@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,12 +11,14 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/edtSenha"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp"
         android:hint="@string/prompt_email"
-        android:layout_below="@+id/txtEmail"
-        android:id="@+id/edtEmail"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress" />
 
     <TextView
         android:id="@+id/txtSenha"
@@ -25,19 +28,24 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:id="@+id/edtSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/progressBar"
         android:hint="@string/prompt_password"
-        android:layout_below="@+id/txtSenha"
-        android:id="@+id/edtSenha"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/btnEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtSenha"
-        android:id="@+id/btnEntrar"
-        android:text="@string/login"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="166dp"
+        android:background="@drawable/roundedbutton"
+        android:text="@string/login"
+        android:textColor="#FFF" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -47,10 +55,23 @@
         android:layout_centerInParent="true"
         android:visibility="gone" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edtEmail"
+        android:layout_below="@+id/txtEmail"
+        android:layout_toEndOf="@+id/progressBar"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/stid_icon"
+        android:visibility="visible" />
+
     <TextView
         android:id="@android:id/empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/progressBar"
         android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
