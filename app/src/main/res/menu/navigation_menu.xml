@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_account"
+        android:title="Minha Conta" />
+    <item
+        android:id="@+id/nav_class"
+        android:title="Disciplinas" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Sair" />
+</menu>

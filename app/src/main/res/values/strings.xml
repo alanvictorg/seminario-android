@@ -15,4 +15,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <!-- Strings related to menu -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
