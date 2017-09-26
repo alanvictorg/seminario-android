@@ -30,5 +30,9 @@
         android:layout_gravity="start">
 
     </android.support.design.widget.NavigationView>
-
+    <TextView
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
 </android.support.v4.widget.DrawerLayout>

@@ -1,5 +1,7 @@
 package com.example.alanvictorg.seminario.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,20 +11,19 @@ import java.util.Date;
 
 public class User implements Serializable{
     private String id;
-    private String nome;
+    private String name;
     private String email;
-    private String token;
-    private Date created_at;
-    private Date updated_at;
+    private String api_token;
+    private String created_at;
+    private String updated_at;
 
-    public User() {
-        nome = null;
-        email = null;
-    }
-
-    public User(String nome, String email){
-        this.nome = nome;
+    public User(String id, String name, String email, String api_token, String created_at, String updated_at) {
+        this.id = id;
+        this.name = name;
         this.email = email;
+        this.api_token = api_token;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 
     public String getId() {
@@ -33,36 +34,12 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getToken() {
-        return token;
+    public String getName() {
+        return name;
     }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Date getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
-
-    public Date getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -71,5 +48,29 @@ public class User implements Serializable{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getApi_token() {
+        return api_token;
+    }
+
+    public void setApi_token(String api_token) {
+        this.api_token = api_token;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }
