@@ -1,12 +1,16 @@
 package com.example.alanvictorg.seminario.services;
 
+import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.models.User;
 import com.example.alanvictorg.seminario.models.UserParameter;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Field;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 
 /**
@@ -18,4 +22,7 @@ public interface UserService {
 
     @POST("auth/student-login")
     Call<User> logar(@Body UserParameter userParameter);
+
+    @GET("student/getClasses/{id}")
+    Call<Turma> getClasses(@Path("id") String id );
 }
