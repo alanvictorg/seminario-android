@@ -1,5 +1,7 @@
 package com.example.alanvictorg.seminario.models;
 
+import java.util.List;
+
 /**
  * Created by Alan Victor G on 26/09/2017.
  */
@@ -28,6 +30,7 @@ public class Turma {
         this.created__at = created__at;
         this.updated_at = updated_at;
     }
+
 
     public int getId() {
         return id;

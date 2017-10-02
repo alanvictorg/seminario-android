@@ -9,10 +9,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alanvictorg.seminario.R;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.services.UserService;
+
+import java.util.List;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mToggle;
     TextView userId;
     Retrofit retrofit;
+    private List<Turma> lturma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +55,17 @@ public class MainActivity extends AppCompatActivity {
 
         UserService service = retrofit.create(UserService.class);
 
-        Call<Turma> requestClasses = service.getClasses(id);
-        requestClasses.enqueue(new Callback<Turma>() {
+        Call<List<Turma>> requestClasses = service.getClasses(id);
+        requestClasses.enqueue(new Callback<List<Turma>>() {
             @Override
-            public void onResponse(Call<Turma> call, Response<Turma> response) {
-                Turma retorno = response.body();
-                Log.i("TURMA", "TURMA:" + retorno.getCodigo());
+            public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
+                List<Turma> retorno = response.body();
+                Log.i("TURMA", "TURMA:" + retorno);
             }
 
             @Override
-            public void onFailure(Call<Turma> call, Throwable t) {
+            public void onFailure(Call<List<Turma>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Erro :(", Toast.LENGTH_SHORT).show();
 
             }
         });

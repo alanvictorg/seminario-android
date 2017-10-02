@@ -4,6 +4,8 @@ import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.models.User;
 import com.example.alanvictorg.seminario.models.UserParameter;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -18,11 +20,11 @@ import retrofit2.http.Query;
  */
 
 public interface UserService {
-    public static final String BASE_URL = "http://192.168.15.2:8000/api/";
+    public static final String BASE_URL = "http://192.168.15.13:8000/api/";
 
     @POST("auth/student-login")
     Call<User> logar(@Body UserParameter userParameter);
 
     @GET("student/getClasses/{id}")
-    Call<Turma> getClasses(@Path("id") String id );
+    Call<List<Turma>> getClasses(@Path("id") String id );
 }
