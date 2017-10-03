@@ -8,13 +8,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.alanvictorg.seminario.R;
+import com.example.alanvictorg.seminario.adapter.TurmaAdapter;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.services.UserService;
 
+import java.util.Arrays;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     TextView userId;
     Retrofit retrofit;
     private List<Turma> lturma;
+    private ListView minhaLista;
+    private TurmaAdapter turmaAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
         okHttpClientBuilder.addInterceptor(loggingInterceptor);
+        minhaLista = (ListView) findViewById(R.id.minhaLista);
+
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(UserService.BASE_URL)
@@ -60,7 +67,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
                 List<Turma> retorno = response.body();
-                Log.i("TURMA", "TURMA:" + retorno);
+                for (Turma t : retorno) {
+                   Log.i("Turma: ","NOME: " + t.getCodigo());
+                }
+                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
+                minhaLista.setAdapter(turmaAdapter);
             }
 
             @Override

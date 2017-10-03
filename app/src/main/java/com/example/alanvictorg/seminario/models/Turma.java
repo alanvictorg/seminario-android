@@ -18,6 +18,7 @@ public class Turma {
     private String created__at;
     private String updated_at;
 
+
     public Turma(int id, int curso_id, int professor_id, String codigo, String turno, String credito, String hr_aula, String ano, String created__at, String updated_at) {
         this.id = id;
         this.curso_id = curso_id;
