@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.alanvictorg.seminario.R;
+import com.example.alanvictorg.seminario.models.Turma;
+
+import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
