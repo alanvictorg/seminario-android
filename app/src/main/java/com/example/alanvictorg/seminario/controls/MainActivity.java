@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.example.alanvictorg.seminario.adapter.TurmaAdapter;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.services.UserService;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -51,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
         okHttpClientBuilder.addInterceptor(loggingInterceptor);
-        minhaLista = (ListView) findViewById(R.id.minhaLista);
-
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(UserService.BASE_URL)
@@ -62,20 +62,23 @@ public class MainActivity extends AppCompatActivity {
 
         UserService service = retrofit.create(UserService.class);
 
-        Call<List<Turma>> requestClasses = service.getClasses(id);
-        requestClasses.enqueue(new Callback<List<Turma>>() {
+        final ListView minhaLista = (ListView) findViewById(R.id.minhaLista);
+        Call<ArrayList<Turma>> requestClasses = service.getClasses(id);
+
+        requestClasses.enqueue(new Callback<ArrayList<Turma>>() {
             @Override
-            public void onResponse(Call<List<Turma>> call, Response<List<Turma>> response) {
-                List<Turma> retorno = response.body();
+            public void onResponse(Call<ArrayList<Turma>> call, Response<ArrayList<Turma>> response) {
+                ArrayList<Turma> retorno = response.body();
                 for (Turma t : retorno) {
                    Log.i("Turma: ","NOME: " + t.getCodigo());
                 }
-                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
+//                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
+                ArrayAdapter turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
                 minhaLista.setAdapter(turmaAdapter);
             }
 
             @Override
-            public void onFailure(Call<List<Turma>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Turma>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Erro :(", Toast.LENGTH_SHORT).show();
 
             }

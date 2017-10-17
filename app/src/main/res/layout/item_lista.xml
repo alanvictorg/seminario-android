@@ -8,12 +8,14 @@
         android:id="@+id/txtCod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
         android:text="Cod"/>
 
     <TextView
         android:id="@+id/txtTurno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:text="Turno"/>
 
 </LinearLayout>

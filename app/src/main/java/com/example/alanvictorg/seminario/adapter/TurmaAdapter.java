@@ -12,56 +12,42 @@ import android.widget.TextView;
 import com.example.alanvictorg.seminario.R;
 import com.example.alanvictorg.seminario.models.Turma;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Callback;
 
 /**
  * Created by fortes on 03/10/2017.
  */
 
-public class TurmaAdapter extends BaseAdapter {
+public class TurmaAdapter extends ArrayAdapter<Turma> {
 
-    private Activity act;
-    private List<Turma> turmas;
+    private final Context context ;
+    private final ArrayList<Turma> turmas;
 
 
-    public TurmaAdapter(Activity act, List<Turma> turmas) {
-        this.act = act;
+    public TurmaAdapter(Context context, ArrayList<Turma> turmas) {
+        super(context, R.layout.item_lista, turmas);
+        this.context = context;
         this.turmas = turmas;
     }
 
     @Override
-    public int getCount() {
-
-        return turmas.size();
-
-    }
-
-    @Override
-    public Object getItem(int i) {
-
-        return turmas.get(i);
-
-    }
-
-    @Override
-    public long getItemId(int i) {
-
-        return turmas.get(i).getId();
-    }
-
-    @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View v = act.getLayoutInflater().inflate(R.layout.item_lista, viewGroup, false);
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflater.inflate(R.layout.item_lista, viewGroup, false);
         Turma turma = turmas.get(i);
 
         //pegando as referências das Views
-        TextView codigo = (TextView) view.findViewById(R.id.txtCod);
-        TextView turno = (TextView) view.findViewById(R.id.txtTurno);
+        TextView codigo = (TextView) v.findViewById(R.id.txtCod);
+        TextView turno = (TextView) v.findViewById(R.id.txtTurno);
 
         //populando as Views
         codigo.setText(turma.getCodigo());
         turno.setText(turma.getTurno());
 
-        return view;
+        return v;
     }
 }
