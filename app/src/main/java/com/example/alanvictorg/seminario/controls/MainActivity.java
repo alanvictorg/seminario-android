@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import com.example.alanvictorg.seminario.adapter.TurmaAdapter;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.services.UserService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -68,13 +71,25 @@ public class MainActivity extends AppCompatActivity {
         requestClasses.enqueue(new Callback<ArrayList<Turma>>() {
             @Override
             public void onResponse(Call<ArrayList<Turma>> call, Response<ArrayList<Turma>> response) {
-                ArrayList<Turma> retorno = response.body();
+                final ArrayList<Turma> retorno = response.body();
                 for (Turma t : retorno) {
                    Log.i("Turma: ","NOME: " + t.getCodigo());
                 }
 //                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
                 ArrayAdapter turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
                 minhaLista.setAdapter(turmaAdapter);
+
+                minhaLista.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
+                        intent.putExtra("nomeDisc", retorno.get(i).getCodigo());
+                        intent.putExtra("anoDisc", retorno.get(i).getAno());
+                        intent.putExtra("turnoDisc", retorno.get(i).getTurno());
+
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
