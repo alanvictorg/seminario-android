@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.alanvictorg.seminario.R;
 import com.example.alanvictorg.seminario.adapter.TurmaAdapter;
+import com.example.alanvictorg.seminario.models.Professor;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.services.UserService;
 
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 .client(okHttpClientBuilder.build())
                 .build();
 
-        UserService service = retrofit.create(UserService.class);
+        final UserService service = retrofit.create(UserService.class);
 
         final ListView minhaLista = (ListView) findViewById(R.id.minhaLista);
         Call<ArrayList<Turma>> requestClasses = service.getClasses(id);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Turma>> call, Response<ArrayList<Turma>> response) {
                 final ArrayList<Turma> retorno = response.body();
                 for (Turma t : retorno) {
-                   Log.i("Turma: ","NOME: " + t.getCodigo());
+//                   Log.i("Turma: ","NOME: " + t.getCodigo());
                 }
 //                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
                 ArrayAdapter turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
@@ -82,6 +83,26 @@ public class MainActivity extends AppCompatActivity {
                 minhaLista.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        int professorid = retorno.get(i).getProfessor_id();
+                        Call<Professor> requestProfessor = service.getProfessor(professorid);
+
+                        requestProfessor.enqueue(new Callback<Professor>() {
+                            @Override
+                            public void onResponse(Call<Professor> call, Response<Professor> response) {
+                                final Professor retorno = response.body();
+                                Log.i("Professor: ","Detalhes-> " + retorno.getNome());
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Professor> call, Throwable t) {
+
+                            }
+                        });
+
+
+
+
                         Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
                         intent.putExtra("nomeDisc", retorno.get(i).getCodigo());
                         intent.putExtra("anoDisc", retorno.get(i).getAno());

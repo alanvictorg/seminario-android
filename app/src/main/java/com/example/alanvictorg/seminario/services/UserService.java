@@ -1,5 +1,6 @@
 package com.example.alanvictorg.seminario.services;
 
+import com.example.alanvictorg.seminario.models.Professor;
 import com.example.alanvictorg.seminario.models.Turma;
 import com.example.alanvictorg.seminario.models.User;
 import com.example.alanvictorg.seminario.models.UserParameter;
@@ -28,4 +29,7 @@ public interface UserService {
 
     @GET("student/getClasses/{id}")
     Call<ArrayList<Turma>> getClasses(@Path("id") String id );
+
+    @GET("getProfessor/{id}")
+    Call<Professor> getProfessor(@Path("id") int id );
 }
