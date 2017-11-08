@@ -18,4 +18,7 @@
     <!-- Strings related to menu -->
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="professor">Professor</string>
+    <string name="img_prof">Imagem do professor</string>
 </resources>

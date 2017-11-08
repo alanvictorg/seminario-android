@@ -14,9 +14,14 @@ public class DisciplinaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disciplina);
         Intent intent = getIntent();
-        String parametroNome = (String) intent.getSerializableExtra("nomeDisc");
+
+        String parametroNomeDisc = (String) intent.getSerializableExtra("nomeDisc");
         TextView nomeDisc = (TextView) findViewById(R.id.txtNomeDisc);
 
-        nomeDisc.setText(parametroNome);
+        String parametroNomeProf = (String) intent.getSerializableExtra("nomeProf");
+        TextView nomeProf = (TextView) findViewById(R.id.txtNomeProf);
+
+        nomeDisc.setText(parametroNomeDisc);
+        nomeProf.setText(parametroNomeProf);
     }
 }
