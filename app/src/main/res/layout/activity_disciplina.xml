@@ -4,18 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alanvictorg.seminario.controls.DisciplinaActivity">
-
-
-    <RelativeLayout
-        android:id="@+id/disc_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="60dp">
-
+    tools:context="com.example.alanvictorg.seminario.controls.DisciplinaActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:id="@+id/txtNomeProf"
@@ -23,32 +14,44 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/txtNomeDisc"
             android:layout_below="@+id/txtNomeDisc"
-            android:text="@string/professor" />
+            android:layout_marginEnd="231dp"
+            android:layout_marginTop="121dp"
+            android:text="@string/professor"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="212dp" />
 
         <TextView
             android:id="@+id/txtNomeDisc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_marginEnd="160dp"
+            android:layout_marginRight="157dp"
+            android:layout_marginTop="75dp"
             android:layout_toEndOf="@+id/imageView3"
             android:fontFamily="casual"
             android:paddingBottom="0dp"
             android:text="@string/disciplina"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
+            android:layout_width="58dp"
+            android:layout_height="64dp"
             android:layout_alignBottom="@+id/txtNomeProf"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:contentDescription="@string/img_prof"
             android:scaleType="fitXY"
-            card_view:srcCompat="@drawable/ic_professor" />
+            card_view:srcCompat="@drawable/ic_professor"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="75dp"
+            android:layout_marginStart="33dp"
+            card_view:layout_constraintLeft_toLeftOf="parent" />
 
-
-    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>

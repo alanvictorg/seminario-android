@@ -87,12 +87,16 @@ public class MainActivity extends AppCompatActivity {
                         Call<Professor> requestProfessor = service.getProfessor(professorid);
                         final Intent intent = new Intent(MainActivity.this, DisciplinaActivity.class);
 
+                        intent.putExtra("nomeDisc", retorno.get(i).getCodigo());
+                        intent.putExtra("anoDisc", retorno.get(i).getAno());
+                        intent.putExtra("turnoDisc", retorno.get(i).getTurno());
                         requestProfessor.enqueue(new Callback<Professor>() {
                             @Override
                             public void onResponse(Call<Professor> call, Response<Professor> response) {
                                 final Professor retorno = response.body();
                                 Log.i("Professor: ","Detalhes-> " + retorno.getNome());
                                 intent.putExtra("nomeProf", retorno.getNome());
+                                startActivity(intent);
                             }
 
                             @Override
@@ -103,12 +107,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-                        intent.putExtra("nomeDisc", retorno.get(i).getCodigo());
-                        intent.putExtra("anoDisc", retorno.get(i).getAno());
-                        intent.putExtra("turnoDisc", retorno.get(i).getTurno());
-
-                        startActivity(intent);
                     }
                 });
             }
