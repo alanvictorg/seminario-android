@@ -5,53 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.alanvictorg.seminario.controls.DisciplinaActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
-        <TextView
-            android:id="@+id/txtNomeProf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/txtNomeDisc"
-            android:layout_below="@+id/txtNomeDisc"
-            android:layout_marginEnd="231dp"
-            android:layout_marginTop="121dp"
-            android:text="@string/professor"
-            card_view:layout_constraintRight_toRightOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            android:layout_marginRight="212dp" />
+    <TextView
+        android:id="@+id/txtNomeProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtNomeDisc"
+        android:layout_below="@+id/txtNomeDisc"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="59dp"
+        android:text="@string/professor"
+        android:textSize="18sp"
+        card_view:layout_constraintLeft_toRightOf="@+id/imageView3"
+        card_view:layout_constraintTop_toTopOf="parent"
+        />
 
-        <TextView
-            android:id="@+id/txtNomeDisc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="160dp"
-            android:layout_marginRight="157dp"
-            android:layout_marginTop="75dp"
-            android:layout_toEndOf="@+id/imageView3"
-            android:fontFamily="casual"
-            android:paddingBottom="0dp"
-            android:text="@string/disciplina"
-            android:textSize="30sp"
-            card_view:layout_constraintRight_toRightOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/txtAnoDisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtNomeDisc"
+        android:layout_below="@+id/txtNomeDisc"
+        android:layout_marginStart="8dp"
+        android:text="@string/ano"
+        android:textSize="20sp"
+        card_view:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="47dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+     />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="58dp"
-            android:layout_height="64dp"
-            android:layout_alignBottom="@+id/txtNomeProf"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:contentDescription="@string/img_prof"
-            android:scaleType="fitXY"
-            card_view:srcCompat="@drawable/ic_professor"
-            card_view:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="75dp"
-            android:layout_marginStart="33dp"
-            card_view:layout_constraintLeft_toLeftOf="parent" />
+    <TextView
+        android:id="@+id/txtNomeDisc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/imageView3"
+        android:fontFamily="casual"
+        android:paddingBottom="0dp"
+        android:text="@string/disciplina"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        card_view:layout_constraintLeft_toRightOf="@+id/imageView3"
+        card_view:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="58dp"
+        android:layout_height="64dp"
+        android:layout_alignBottom="@+id/txtNomeProf"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/img_prof"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:srcCompat="@drawable/ic_professor"
+        />
 
+    <View
+        android:id="@+id/Divisor1"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:background="#A8A8A8"
+        card_view:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="103dp"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintHorizontal_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

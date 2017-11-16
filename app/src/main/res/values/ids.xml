@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="t_codigo" type="id" />
+    <item name="txtTurno" type="id">Turno</item>
+    <item name="imageView2" type="id">Professor</item>
 </resources>
