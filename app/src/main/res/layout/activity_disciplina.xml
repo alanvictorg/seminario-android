@@ -15,12 +15,12 @@
         android:layout_alignStart="@+id/txtNomeDisc"
         android:layout_below="@+id/txtNomeDisc"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="340dp"
         android:text="@string/professor"
         android:textSize="18sp"
         card_view:layout_constraintLeft_toRightOf="@+id/imageView3"
         card_view:layout_constraintTop_toTopOf="parent"
-        />
+       />
 
     <TextView
         android:id="@+id/txtAnoDisc"
@@ -28,13 +28,13 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/txtNomeDisc"
         android:layout_below="@+id/txtNomeDisc"
+        android:layout_marginEnd="56dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="337dp"
         android:text="@string/ano"
         android:textSize="20sp"
-        card_view:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="47dp"
         card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
      />
 
     <TextView
@@ -43,16 +43,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="297dp"
         android:layout_toEndOf="@+id/imageView3"
         android:fontFamily="casual"
         android:paddingBottom="0dp"
         android:text="@string/disciplina"
-        android:textSize="35sp"
         android:textColor="@color/black"
+        android:textSize="35sp"
         android:textStyle="bold"
         card_view:layout_constraintLeft_toRightOf="@+id/imageView3"
-        card_view:layout_constraintTop_toTopOf="parent" />
+        card_view:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -61,25 +62,120 @@
         android:layout_alignBottom="@+id/txtNomeProf"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="297dp"
         android:contentDescription="@string/img_prof"
         card_view:layout_constraintLeft_toLeftOf="parent"
         card_view:layout_constraintTop_toTopOf="parent"
         card_view:srcCompat="@drawable/ic_professor"
-        />
+       />
 
     <View
         android:id="@+id/Divisor1"
         android:layout_width="395dp"
         android:layout_height="1dp"
-        android:background="#A8A8A8"
-        card_view:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="103dp"
         android:layout_marginLeft="8dp"
-        card_view:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="281dp"
+        android:background="#A8A8A8"
+        card_view:layout_constraintHorizontal_bias="0.0"
+        card_view:layout_constraintLeft_toLeftOf="parent"
         card_view:layout_constraintRight_toRightOf="parent"
-        card_view:layout_constraintHorizontal_bias="0.0" />
+        card_view:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="377dp"
+        android:background="#A8A8A8"
+        card_view:layout_constraintHorizontal_bias="0.0"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNotas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="165dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/notas"
+        android:textSize="30sp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/txtN1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="319dp"
+        android:layout_marginTop="464dp"
+        android:text="@string/n1"
+        android:textSize="25sp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/txtN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="240dp"
+        android:layout_marginTop="464dp"
+        android:text="@string/n2"
+        android:textSize="25sp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/txtN3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="157dp"
+        android:layout_marginTop="464dp"
+        android:text="@string/n3"
+        android:textSize="25sp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+ />
+
+    <TextView
+        android:id="@+id/txtMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="464dp"
+        android:text="@string/m1"
+        android:textSize="25sp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+      />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="406dp"
+        android:layout_height="202dp"
+        card_view:srcCompat="@drawable/splash_logo"
+        tools:ignore="ContentDescription"
+        card_view:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="2dp"
+        card_view:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:srcCompat="@mipmap/ic_voltar"
+        tools:ignore="ContentDescription"
+        android:onClick="irproinicio"/>
 
 </android.support.constraint.ConstraintLayout>

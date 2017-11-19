@@ -22,7 +22,7 @@ import retrofit2.http.Query;
  */
 
 public interface UserService {
-    public static final String BASE_URL = "http://172.20.10.2:8000/api/";
+    public static final String BASE_URL = "http://192.168.15.10:8000/api/";
 
     @POST("auth/student-login")
     Call<User> logar(@Body UserParameter userParameter);

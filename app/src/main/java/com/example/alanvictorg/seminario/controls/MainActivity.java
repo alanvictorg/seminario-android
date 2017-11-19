@@ -117,13 +117,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
-
-        mDrawerLayout.addDrawerListener(mToggle);
-        mToggle.syncState();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+//        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+//
+//        mDrawerLayout.addDrawerListener(mToggle);
+//        mToggle.syncState();
+//
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -135,4 +135,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

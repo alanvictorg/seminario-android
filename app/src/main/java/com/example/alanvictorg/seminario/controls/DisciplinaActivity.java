@@ -3,6 +3,7 @@ package com.example.alanvictorg.seminario.controls;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.alanvictorg.seminario.R;
@@ -28,4 +29,9 @@ public class DisciplinaActivity extends AppCompatActivity {
         nomeDisc.setText(parametroNomeDisc);
         nomeProf.setText(parametroNomeProf);
     }
+//    public void irproinicio(View view) {
+//        setContentView(R.layout.activity_main);
+//    }
+
+
 }
