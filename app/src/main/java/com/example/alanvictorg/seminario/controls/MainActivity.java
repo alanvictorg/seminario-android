@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Turma>> call, Response<ArrayList<Turma>> response) {
                 final ArrayList<Turma> retorno = response.body();
                 for (Turma t : retorno) {
+                    Log.i("RETORNO ","retorno-> " + t.getN1());
+
 //                   Log.i("Turma: ","NOME: " + t.getCodigo());
                 }
 //                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
@@ -90,11 +92,16 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("nomeDisc", retorno.get(i).getCodigo());
                         intent.putExtra("anoDisc", retorno.get(i).getAno());
                         intent.putExtra("turnoDisc", retorno.get(i).getTurno());
+                        intent.putExtra("n1", retorno.get(i).getN1());
+                        intent.putExtra("n2", retorno.get(i).getN2());
+                        intent.putExtra("n3", retorno.get(i).getN3());
+                        intent.putExtra("media", retorno.get(i).getMedia());
+
                         requestProfessor.enqueue(new Callback<Professor>() {
                             @Override
                             public void onResponse(Call<Professor> call, Response<Professor> response) {
                                 final Professor retorno = response.body();
-                                Log.i("Professor: ","Detalhes-> " + retorno.getNome());
+//                                Log.i("Professor: ","Detalhes-> " + retorno.getNome());
                                 intent.putExtra("nomeProf", retorno.getNome());
                                 startActivity(intent);
                             }

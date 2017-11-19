@@ -28,4 +28,8 @@
     <string name="n2">N2</string>
     <string name="n3">N3</string>
     <string name="m1">M1</string>
+    <string name="vp1">VP1</string>
+    <string name="vp2">VP2</string>
+    <string name="vp3">VP3</string>
+    <string name="media">Média</string>
 </resources>
