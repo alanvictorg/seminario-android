@@ -75,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 final ArrayList<Turma> retorno = response.body();
                 for (Turma t : retorno) {
                     Log.i("RETORNO ","retorno-> " + t.getN1());
-
-//                   Log.i("Turma: ","NOME: " + t.getCodigo());
                 }
 //                turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);
                 ArrayAdapter turmaAdapter = new TurmaAdapter(MainActivity.this, retorno);

@@ -114,52 +114,51 @@
 
     <TextView
         android:id="@+id/txtN1"
-        android:layout_width="47dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="5dp"
         android:text="@string/n1"
         android:textAlignment="center"
         android:textSize="20sp"
-        card_view:layout_constraintTop_toBottomOf="@+id/textView1"
-        android:layout_marginEnd="310dp"
-        card_view:layout_constraintRight_toRightOf="parent"
-        />
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <TextView
         android:id="@+id/txtN2"
-        android:layout_width="46dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="232dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="41dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="6dp"
         android:text="@string/n2"
         android:textAlignment="center"
         android:textSize="20sp"
-        card_view:layout_constraintTop_toBottomOf="@+id/textView2"
-        card_view:layout_constraintRight_toRightOf="parent" />
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/txtN3"
-        android:layout_width="46dp"
+        android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="6dp"
         android:text="@string/n3"
         android:textAlignment="center"
         android:textSize="20sp"
-        card_view:layout_constraintTop_toBottomOf="@+id/textView3"
-        card_view:layout_constraintRight_toRightOf="parent" />
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/txtMedia"
-        android:layout_width="70dp"
+        android:layout_width="48dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginTop="6dp"
         android:text="@string/m1"
         android:textAlignment="center"
         android:textSize="20sp"
-        card_view:layout_constraintTop_toBottomOf="@+id/textView4"
-        card_view:layout_constraintRight_toRightOf="parent" />
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -186,14 +185,14 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_width="46dp"
         android:layout_height="wrap_content"
         android:text="@string/vp1"
         android:textSize="25sp"
-        android:layout_marginTop="73dp"
         card_view:layout_constraintTop_toBottomOf="@+id/view"
-        card_view:layout_constraintRight_toLeftOf="@+id/textView2"
-        android:layout_marginEnd="33dp" />
+        android:layout_marginTop="73dp"
+        android:layout_marginStart="62dp"
+        card_view:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -201,10 +200,10 @@
         android:layout_height="wrap_content"
         android:text="@string/vp2"
         android:textSize="25sp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="72dp"
         card_view:layout_constraintTop_toBottomOf="@+id/view"
-        card_view:layout_constraintRight_toLeftOf="@+id/textView3"
-        android:layout_marginEnd="37dp" />
+        android:layout_marginStart="142dp"
+        card_view:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -214,8 +213,8 @@
         android:textSize="25sp"
         android:layout_marginTop="73dp"
         card_view:layout_constraintTop_toBottomOf="@+id/view"
-        card_view:layout_constraintRight_toLeftOf="@+id/textView4"
-        android:layout_marginEnd="40dp" />
+        android:layout_marginStart="216dp"
+        card_view:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
@@ -225,7 +224,7 @@
         android:textSize="25sp"
         android:layout_marginTop="73dp"
         card_view:layout_constraintTop_toBottomOf="@+id/view"
-        android:layout_marginEnd="41dp"
-        card_view:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginStart="301dp"
+        card_view:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
